@@ -2,11 +2,12 @@
    <div class="col-xs-12">
         <ul class="list-group">
              <app-postlistitem
-              *ngFor="let post of posts"
+              *ngFor="let post of posts; let i = index"
               [title]="post.title"
               [content]="post.content"
               [loveIts]="post.loveIts"
               [createdAt]="post.createdAt"
+              [index]="i"
              ></app-postlistitem>
         </ul>
    </div>

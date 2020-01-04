@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Post } from './post';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +8,17 @@ import { Post } from './post';
 })
 export class AppComponent {
 
-
-    posts: Post[] = [
-      new Post('Mon Premier Post',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
-      ),
-      new Post('Mon deuxième post',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
-    ),
-      new Post('Mon troisième post',  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis',
-      )
-    ];
     constructor() {
-
+      var firebaseConfig = {
+        apiKey: "AIzaSyBhb06Dwp4nxwtClAVwsh4Lmkv384aPiAc",
+        authDomain: "blog-1e028.firebaseapp.com",
+        databaseURL: "https://blog-1e028.firebaseio.com",
+        projectId: "blog-1e028",
+        storageBucket: "blog-1e028.appspot.com",
+        messagingSenderId: "841343362027",
+        appId: "1:841343362027:web:469769878e2e87bf85afae"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
     }
 }
